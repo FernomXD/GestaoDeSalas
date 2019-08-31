@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
+
+namespace GestaoDeSalas.Models.Sala
+{
+    [Table("Salas")]
+    public class Salas
+    {
+
+        public int SalasId { get; set; }
+
+        public string NomeSala { get; set; }
+
+        public string DescricaoSala { get; set; }
+
+        public Salas()
+        {
+
+        }
+
+        /// <summary>
+        /// Construtor que gera um id para criação da sala.
+        /// </summary>
+        /// <param name="salaId"></param>
+        /// <param name="nomeSala"></param>
+        /// <param name="descricaoSala"></param>
+        public Salas(string nomeSala, string descricaoSala)
+        {
+            this.NomeSala = nomeSala;
+            this.DescricaoSala = descricaoSala;
+        }
+
+        /// <summary>
+        /// Construtor que recebe um id para criação do objeto sala.
+        /// </summary>
+        /// <param name="salaId"></param>
+        /// <param name="nomeSala"></param>
+        /// <param name="descricaoSala"></param>
+        public Salas(int salaId, string nomeSala, string descricaoSala)
+        {
+            this.SalasId = salaId;
+            this.NomeSala = nomeSala;
+            this.DescricaoSala = descricaoSala;
+        }
+    }
+}
