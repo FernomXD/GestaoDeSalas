@@ -17,7 +17,6 @@ namespace GestaoDeSalas.Controllers
     {
         private BancoDBContext db = new BancoDBContext();
 
-
         // GET: api/Salas
         public IQueryable<Salas> GetSalas()
         {
