@@ -79,6 +79,8 @@ namespace GestaoDeSalas.Controllers
             {
                 return BadRequest(ModelState);
             }
+            if(salasAgendadas.DataInicio > salasAgendadas.DataFim)
+                return Content(HttpStatusCode.BadRequest, "Ocorreu um erro ao reservar sua sala. O horário final deve ser maior que o inicial.");
 
             if (salasAgendadas.VerificaDisponibilidade())
             {
