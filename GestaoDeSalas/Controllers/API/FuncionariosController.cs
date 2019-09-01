@@ -13,6 +13,7 @@ using GestaoDeSalas.Models.Funcionarios;
 
 namespace GestaoDeSalas.Controllers.API
 {
+    //[Authorize]
     public class FuncionariosController : ApiController
     {
         private BancoDBContext db = new BancoDBContext();

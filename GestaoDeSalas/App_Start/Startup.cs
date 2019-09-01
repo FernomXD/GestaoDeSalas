@@ -38,7 +38,7 @@ namespace GestaoDeSalas.App_Start
             var opcoesConfiguracaoToken = new OAuthAuthorizationServerOptions()
             {
                 AllowInsecureHttp = true,
-                TokenEndpointPath = new PathString("/token"),
+                TokenEndpointPath = new PathString("/NewToken"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(1),
                 Provider = new ProviderDeTokensDeAcesso()
             };
