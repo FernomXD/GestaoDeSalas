@@ -9,48 +9,48 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using GestaoDeSalas.Models.BancoDeDados;
-using GestaoDeSalas.Models.Sala;
+using GestaoDeSalas.Models.Funcionarios;
 
-namespace GestaoDeSalas.Controllers
+namespace GestaoDeSalas.Controllers.API
 {
-    public class SalasController : ApiController
+    public class FuncionariosController : ApiController
     {
         private BancoDBContext db = new BancoDBContext();
 
-        // GET: api/Salas
-        public IQueryable<Salas> GetSalas()
+        // GET: api/Funcionarios
+        public IQueryable<Funcionario> GetFuncionario()
         {
-            return db.Salas;
+            return db.Funcionario;
         }
 
-        // GET: api/Salas/5
-        [ResponseType(typeof(Salas))]
-        public IHttpActionResult GetSalas(int id)
+        // GET: api/Funcionarios/5
+        [ResponseType(typeof(Funcionario))]
+        public IHttpActionResult GetFuncionario(int id)
         {
-            Salas salas = db.Salas.Find(id);
-            if (salas == null)
+            Funcionario funcionario = db.Funcionario.Find(id);
+            if (funcionario == null)
             {
                 return NotFound();
             }
 
-            return Ok(salas);
+            return Ok(funcionario);
         }
 
-        // PUT: api/Salas/5
+        // PUT: api/Funcionarios/5
         [ResponseType(typeof(void))]
-        public IHttpActionResult PutSalas(int id, Salas salas)
+        public IHttpActionResult PutFuncionario(int id, Funcionario funcionario)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (id != salas.SalasId)
+            if (id != funcionario.FuncionarioId)
             {
                 return BadRequest();
             }
 
-            db.Entry(salas).State = EntityState.Modified;
+            db.Entry(funcionario).State = EntityState.Modified;
 
             try
             {
@@ -58,7 +58,7 @@ namespace GestaoDeSalas.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SalasExists(id))
+                if (!FuncionarioExists(id))
                 {
                     return NotFound();
                 }
@@ -71,35 +71,35 @@ namespace GestaoDeSalas.Controllers
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-        // POST: api/Salas
-        [ResponseType(typeof(Salas))]
-        public IHttpActionResult PostSalas(Salas salas)
+        // POST: api/Funcionarios
+        [ResponseType(typeof(Funcionario))]
+        public IHttpActionResult PostFuncionario(Funcionario funcionario)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            db.Salas.Add(salas);
+            db.Funcionario.Add(funcionario);
             db.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = salas.SalasId }, salas);
+            return CreatedAtRoute("DefaultApi", new { id = funcionario.FuncionarioId }, funcionario);
         }
 
-        // DELETE: api/Salas/5
-        [ResponseType(typeof(Salas))]
-        public IHttpActionResult DeleteSalas(int id)
+        // DELETE: api/Funcionarios/5
+        [ResponseType(typeof(Funcionario))]
+        public IHttpActionResult DeleteFuncionario(int id)
         {
-            Salas salas = db.Salas.Find(id);
-            if (salas == null)
+            Funcionario funcionario = db.Funcionario.Find(id);
+            if (funcionario == null)
             {
                 return NotFound();
             }
 
-            db.Salas.Remove(salas);
+            db.Funcionario.Remove(funcionario);
             db.SaveChanges();
 
-            return Ok(salas);
+            return Ok(funcionario);
         }
 
         protected override void Dispose(bool disposing)
@@ -111,9 +111,9 @@ namespace GestaoDeSalas.Controllers
             base.Dispose(disposing);
         }
 
-        private bool SalasExists(int id)
+        private bool FuncionarioExists(int id)
         {
-            return db.Salas.Count(e => e.SalasId == id) > 0;
+            return db.Funcionario.Count(e => e.FuncionarioId == id) > 0;
         }
     }
 }

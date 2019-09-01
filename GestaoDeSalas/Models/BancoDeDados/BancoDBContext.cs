@@ -14,5 +14,6 @@ namespace GestaoDeSalas.Models.BancoDeDados
 
         public virtual DbSet<Salas> Salas { get; set; }
         public virtual DbSet<SalasAgendadas> SalasAgendadas { get; set; }
+        public virtual DbSet<Funcionarios.Funcionario> Funcionario { get; set; }
     }
 }

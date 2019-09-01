@@ -11,8 +11,9 @@ using System.Web.Http.Description;
 using GestaoDeSalas.Models.BancoDeDados;
 using GestaoDeSalas.Models.Sala;
 
-namespace GestaoDeSalas.Controllers
+namespace GestaoDeSalas.Controllers.API
 {
+    [Authorize]
     public class SalasAgendadasController : ApiController
     {
         private BancoDBContext db = new BancoDBContext();
