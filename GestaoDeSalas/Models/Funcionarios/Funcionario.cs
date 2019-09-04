@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestaoDeSalas.Models.Funcionarios.FuncionarioViewModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -27,6 +28,13 @@ namespace GestaoDeSalas.Models.Funcionarios
             this.Nome = nome;
             this.Usuario = username;
             this.Senha = senha;
+        }
+
+        public Funcionario(FuncCadViewModel model)
+        {
+            this.Nome = model.Nome;
+            this.Usuario = model.Usuario;
+            this.Senha = model.Senha;
         }
 
     }

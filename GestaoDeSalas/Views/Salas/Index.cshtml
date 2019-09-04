@@ -1,0 +1,39 @@
+﻿@model IEnumerable<GestaoDeSalas.Models.Sala.Salas>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeSala)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescricaoSala)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeSala)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescricaoSala)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SalasId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SalasId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SalasId })
+        </td>
+    </tr>
+}
+
+</table>

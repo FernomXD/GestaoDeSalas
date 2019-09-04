@@ -196,15 +196,23 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\API\SalasAgendadasController.cs" />
     <Compile Include="Controllers\API\SalasController.cs" />
+    <Compile Include="Controllers\Plataforma\AccountController.cs" />
+    <Compile Include="Controllers\Plataforma\FuncionariosController.cs" />
+    <Compile Include="Controllers\Plataforma\SalasAgendadasController.cs" />
+    <Compile Include="Controllers\Plataforma\SalasController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Autenticacao\AutenticacaoPlataforma\AuthorizeFuncionario.cs" />
     <Compile Include="Models\Autenticacao\ProviderDeTokensDeAcesso.cs" />
     <Compile Include="Models\BancoDeDados\BancoDBContext.cs" />
     <Compile Include="Models\Funcionarios\Funcionario.cs" />
     <Compile Include="Models\Funcionarios\FuncionariosSeguranca.cs" />
+    <Compile Include="Models\Funcionarios\FuncionarioViewModel\FuncCadViewModel.cs" />
+    <Compile Include="Models\Funcionarios\FuncionarioViewModel\FuncLoginViewModel.cs" />
+    <Compile Include="Models\Funcionarios\LoginFuncionario.cs" />
     <Compile Include="Models\Sala\Salas.cs" />
     <Compile Include="Models\Sala\SalasAgendadas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,6 +223,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap_datepicker\bootstrap-datetimepicker.css" />
+    <Content Include="Content\Login.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -240,6 +250,8 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap_datepicker\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap_datepicker\moment-with-locales.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -259,6 +271,24 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Funcionarios\Create.cshtml" />
+    <Content Include="Views\Funcionarios\Delete.cshtml" />
+    <Content Include="Views\Funcionarios\Details.cshtml" />
+    <Content Include="Views\Funcionarios\Edit.cshtml" />
+    <Content Include="Views\Funcionarios\Index.cshtml" />
+    <Content Include="Views\Salas\Create.cshtml" />
+    <Content Include="Views\Salas\Delete.cshtml" />
+    <Content Include="Views\Salas\Details.cshtml" />
+    <Content Include="Views\Salas\Edit.cshtml" />
+    <Content Include="Views\Salas\Index.cshtml" />
+    <Content Include="Views\SalasAgendadas\Create.cshtml" />
+    <Content Include="Views\SalasAgendadas\Delete.cshtml" />
+    <Content Include="Views\SalasAgendadas\Details.cshtml" />
+    <Content Include="Views\SalasAgendadas\Edit.cshtml" />
+    <Content Include="Views\SalasAgendadas\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

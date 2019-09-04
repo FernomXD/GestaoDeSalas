@@ -1,0 +1,16 @@
+﻿@using GestaoDeSalas.Models.Funcionarios
+
+@if (LoginFuncionario.VerificaLogado((HttpCookie)Request.Cookies["_LoginFunc"]))
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li style="color:#9d9d9d; margin-top:15px;">Olá @LoginFuncionario.RetornaNome((HttpCookie)Request.Cookies["_LoginFunc"])</li>
+        <li>@Html.ActionLink("Sair", "logout", "account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Cadastrar", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Entrar", "login", "account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
