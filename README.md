@@ -56,10 +56,14 @@ Uma vez autenticado na plataforma, basta utilizar esse token para acessar a plat
 
 
 
-<h1>Criando uma nova sala</h1>
+<h1>Salas</h1>
+É necessário estar logado para ter acesso a qualquer uma das funcionalidade da api relacionadas as salas 
+ 
+<h2>Criando uma sala</h2>
+Para inserir uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação e no body inserir o nome da sala e descrição da sala.
 
-Para inserir uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação e no body inserir o nome da sala  e descrição da sala
-
+| POST | SeuDominio.com.br/api/salas |
+|------|-----------------------------|
 
 <h3>Autenticação</h3>
 
@@ -77,3 +81,20 @@ Para inserir uma sala basta informar no Headers a key Authorization com os valor
 | DescricaoSala    | string           | Descrição da sala            | Sim         |
 
 ![image](https://user-images.githubusercontent.com/37151034/64351662-18a39900-cfd1-11e9-9df4-b9b7a3b45b25.png)
+
+<h3>Listar salas</h3>
+Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+
+| GET | SeuDominio.com.br/api/salas |
+|-----|-----------------------------|
+
+<h3>Autenticação</h3>
+
+| Nome da variável | Tipo da variável | Descrição                                      | Obrigatório |
+|------------------|------------------|------------------------------------------------|-------------|
+| Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
+
+![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+
+![image](https://user-images.githubusercontent.com/37151034/64353279-e182b700-cfd3-11e9-9805-4c07e902417b.png)
+
