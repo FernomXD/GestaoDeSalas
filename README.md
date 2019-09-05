@@ -109,7 +109,7 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 </br>
 
 <h3>Buscar uma sala</h3>
-Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+Para buscar uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação.
 
 | GET | SeuDominio.com.br/api/salas/5 |
 |-----|-------------------------------|
@@ -129,7 +129,7 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 </br>
 
 <h3>Deletar uma sala</h3>
-Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+Para deletar uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação.
 
 | DELETE | SeuDominio.com.br/api/salas/5 |
 |-----|----------------------------------|
@@ -148,7 +148,7 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 </br>
 
 <h3>Alterar uma sala</h3>
-Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+Para alterar uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação.
 
 | DELETE | SeuDominio.com.br/api/salas |
 |-----|--------------------------------|
@@ -182,10 +182,6 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 
 
 
-
-
-
-
 <h1>Agendamento de salas</h1>
 É necessário estar logado para ter acesso a qualquer uma das funcionalidade da api relacionadas aos agendamentos das salas
  
@@ -193,7 +189,7 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
  </br>
  
 <h2>Criando um Agendamento</h2>
-Para inserir um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação e no body inserir o nome da sala e descrição da sala.
+Para inserir um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação e no body inserir as informações necessárias para um agendamento.
 
 | POST | SeuDominio.com.br/api/salasagendadas |
 |------|--------------------------------------|
@@ -204,7 +200,7 @@ Para inserir um agendamento basta informar no Headers a key Authorization com os
 |------------------|------------------|------------------------------------------------|-------------|
 | Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
 
-![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+![image](https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png)
 
 <h3>Informações da sala</h3>
 
@@ -233,7 +229,7 @@ Para listar todos os agendamentos basta informar no Headers a key Authorization 
 |------------------|------------------|------------------------------------------------|-------------|
 | Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
 
-![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+![image](https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png)
 
 ![image](https://user-images.githubusercontent.com/37151034/64355189-25c38680-cfd7-11e9-94e0-003cd3c32379.png)
 
@@ -241,7 +237,7 @@ Para listar todos os agendamentos basta informar no Headers a key Authorization 
 </br>
 
 <h3>Buscar um agendamento</h3>
-Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+Para buscar um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação.
 
 | GET | SeuDominio.com.br/api/salasagendadas/5 |
 |-----|----------------------------------------|
@@ -252,7 +248,7 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 |------------------|------------------|------------------------------------------------|-------------|
 | Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
 
-![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+![image](https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png)
 
 ![image](https://user-images.githubusercontent.com/37151034/64355284-4d1a5380-cfd7-11e9-81d5-829e1aab6c35.png)
 
@@ -260,8 +256,8 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 </br>
 </br>
 
-<h3>Deletar uma sala</h3>
-Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<h3>Deletar um agendamento</h3>
+Para deletar um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação.
 
 | DELETE | SeuDominio.com.br/api/salasagendadas/5 |
 |--------|----------------------------------------|
@@ -272,15 +268,15 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 |------------------|------------------|------------------------------------------------|-------------|
 | Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
 
-![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+![image](https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png)
 
 ![image](https://user-images.githubusercontent.com/37151034/64355357-74712080-cfd7-11e9-8671-5a78f8847178.png)
 
 
 </br>
 
-<h3>Alterar uma sala</h3>
-Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<h3>Alterar um agendamento</h3>
+Para alterar um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação.
 
 | POST | SeuDominio.com.br/api/salasagendadas |
 |------|--------------------------------------|
@@ -291,7 +287,7 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 |------------------|------------------|------------------------------------------------|-------------|
 | Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
 
-![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+![image](https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png)
 
 ![image](https://user-images.githubusercontent.com/37151034/64355474-ae422700-cfd7-11e9-80c5-7c7330dca72d.png)
 
