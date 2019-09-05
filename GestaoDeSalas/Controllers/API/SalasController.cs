@@ -19,6 +19,10 @@ namespace GestaoDeSalas.Controllers.API
         private BancoDBContext db = new BancoDBContext();
 
         // GET: api/Salas
+        /// <summary>
+        /// Método para retornar todas as salas cadastradas
+        /// </summary>
+        /// <returns></returns>
         public IQueryable<Salas> GetSalas()
         {
             return db.Salas;

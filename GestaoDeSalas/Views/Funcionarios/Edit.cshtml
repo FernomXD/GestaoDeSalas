@@ -1,18 +1,27 @@
 ﻿@model GestaoDeSalas.Models.Funcionarios.Funcionario
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar funcionário";
 }
 
-<h2>Edit</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row" style="padding: 0px 15px 0px 15px;">
+            <center><h3 style="color: #808080"><i class="fa fa-pencil-alt"></i>  Editar funcionário</h3></center>
+
+
+        </div>
+    </div>
+</div>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Funcionario</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.FuncionarioId)
@@ -43,15 +52,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <a href="@Url.Action("Index", "Funcionarios")" class="btn btn-default"><i class="fa fa-arrow-left"></i> Voltar</a>
+
+                <input type="submit" value="Salvar" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

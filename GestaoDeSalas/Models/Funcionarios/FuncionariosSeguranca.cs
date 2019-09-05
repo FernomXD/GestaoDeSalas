@@ -8,16 +8,12 @@ namespace GestaoDeSalas.Models.Funcionarios
 {
     public class FuncionariosSeguranca : Funcionario
     {
-        //public static bool Login(string login, string senha)
-        //{
-        //    using (BancoDBContext entities = new BancoDBContext())
-        //    {
-        //        return entities.Funcionario.Any(user =>
-        //       user.Usuario.Equals(login, StringComparison.OrdinalIgnoreCase)
-        //       && user.Senha == senha);
-        //    }
-        //}
-
+        /// <summary>
+        /// Método responsável por verificar se o usuário está logado.
+        /// </summary>
+        /// <param name="username">Usuário do funcionário</param>
+        /// <param name="senha">Senha do funcionário</param>
+        /// <returns></returns>
         public static bool Login(string username, string senha)
         {
             BancoDBContext db = new BancoDBContext();

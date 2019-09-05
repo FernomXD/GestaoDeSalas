@@ -1,12 +1,20 @@
 ﻿@model GestaoDeSalas.Models.Sala.SalasAgendadas
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Novo agendamento";
 }
-
-<h2>Create</h2>
-
 <link href="~/Content/bootstrap_datepicker/bootstrap-datetimepicker.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row" style="padding: 0px 15px 0px 15px;">
+            <center><h3 style="color: #808080"><i class="fa fa-plus"></i>  Novo agendamento</h3></center>
+
+
+        </div>
+    </div>
+</div>
 
 
 @using (Html.BeginForm())
@@ -14,9 +22,13 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>SalasAgendadas</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @ViewBag.ErroInserir
+
+
         <div class="form-group">
             @Html.LabelFor(model => model.SalasId, "SalasId", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -36,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DataInicio, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DataInicio, new { htmlAttributes = new { @class = "form-control datepicker"} })
+                @Html.EditorFor(model => model.DataInicio, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.DataInicio, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -44,27 +56,27 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DataFim, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DataFim, new { htmlAttributes = new { @class = "form-control datepicker"} })
+                @Html.EditorFor(model => model.DataFim, new { htmlAttributes = new { @class = "form-control datepicker" } })
                 @Html.ValidationMessageFor(model => model.DataFim, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <a href="@Url.Action("Index", "SalasAgendadas")" class="btn btn-default"><i class="fa fa-arrow-left"></i> Voltar</a>
+
+                <input type="submit" value="Inserir" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 <script src="~/Scripts/jquery-3.3.1.js"></script>
 <script src="~/Scripts/bootstrap.min.js"></script>
 <script src="~/Scripts/bootstrap_datepicker/moment-with-locales.js"></script>
 <script src="~/Scripts/bootstrap_datepicker/bootstrap-datepicker.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
 <script>
     $('.datepicker').datetimepicker({
@@ -74,7 +86,7 @@
         showTodayButton: true,
         locale: 'pt-BR'
     });
-    
+
 </script>
 
 <!-- Latest compiled and minified CSS -->

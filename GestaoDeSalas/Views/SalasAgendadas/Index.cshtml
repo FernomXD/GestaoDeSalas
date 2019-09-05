@@ -1,51 +1,133 @@
-﻿@model IEnumerable<GestaoDeSalas.Models.Sala.SalasAgendadas>
+﻿@model GestaoDeSalas.Models.Sala.SalaViewModel.AgendamentoIndexViewModel
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Lista de agendamentos";
 }
 
-<h2>Index</h2>
+<link href="~/Content/bootstrap_datepicker/bootstrap-datetimepicker.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Salas.NomeSala)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Titulo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataInicio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataFim)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Salas.NomeSala)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Titulo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataInicio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataFim)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.SalasAgendadasId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.SalasAgendadasId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.SalasAgendadasId })
-        </td>
-    </tr>
-}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row" style="padding: 0px 15px 0px 15px;">
+            <center><h3 style="color: #808080"><i class="fa fa-calendar-alt"></i>  Agendamentos</h3></center>
 
-</table>
+            <a href="@Url.Action("Create", "SalasAgendadas")" class="btn btn-primary"><i class="fa fa-plus"></i> Novo agendamento</a>
+        </div>
+    </div>
+</div>
+
+
+<hr />
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Inicio)
+                    @Html.EditorFor(model => model.Inicio, new { htmlAttributes = new { @class = "form-control datepicker", @style = "max-width: 100%; width: 100%" } })
+                </div>
+                <div class="col-md-4">
+                    @Html.DisplayNameFor(model => model.Fim)
+                    @Html.EditorFor(model => model.Fim, new { htmlAttributes = new { @class = "form-control datepicker", @style = "max-width: 100%; width: 100%" } })
+                </div>
+                <div class="col-md-4">
+                    @Html.DisplayNameFor(model => model.NomeReunião)
+                    @Html.EditorFor(model => model.NomeReunião, new { htmlAttributes = new { @class = "form-control", @style = "max-width: 100%; width: 100%" } })
+                </div>
+                <div class="col-md-3">
+                    <br />
+                    <button type="submit" class="btn btn-primary" style="margin-right:20px;"><i class="fa fa-search"></i> Buscar</button>
+
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 20px; overflow-x:auto;">
+    <div class="col-md-10 col-md-offset-1">
+        <table class="table">
+            <caption><h4>Lista de agendamento</h4></caption>
+            <tr>
+                <th>
+                    Nome da sala
+                </th>
+                <th>
+                    Título da reunião
+                </th>
+                <th>
+                    Inicio
+                </th>
+                <th>
+                    Fim
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model.Agendamentos)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salas.NomeSala)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Titulo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataFim)
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-outline-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Opções <i class="fa fa-caret-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="@Url.Action("Edit/"+@item.SalasAgendadasId, "SalasAgendadas")"><i class="fa fa-pencil-alt"></i> Editar</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Details/"+@item.SalasAgendadasId, "SalasAgendadas")"><i class="fa fa-list"></i> Detalhes</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Delete/"+@item.SalasAgendadasId, "SalasAgendadas")"><i class="fa fa-trash-alt"></i> Deletar</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+
+
+<script src="~/Scripts/jquery-3.3.1.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/bootstrap_datepicker/moment-with-locales.js"></script>
+<script src="~/Scripts/bootstrap_datepicker/bootstrap-datepicker.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+<script>
+    $('.datepicker').datetimepicker({
+        format: 'DD/MM/YYYY HH:mm:ss',
+        sideBySide: true,
+        ignoreReadonly: true,
+        showTodayButton: true,
+        locale: 'pt-BR'
+    });
+
+</script>

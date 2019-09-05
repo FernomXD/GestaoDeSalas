@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using GestaoDeSalas.Models.Autenticacao.AutenticacaoPlataforma;
 using GestaoDeSalas.Models.BancoDeDados;
 using GestaoDeSalas.Models.Funcionarios;
+using GestaoDeSalas.Models.Funcionarios.FuncionarioViewModel;
 
 namespace GestaoDeSalas.Controllers.Plataforma
 {
@@ -20,7 +21,26 @@ namespace GestaoDeSalas.Controllers.Plataforma
         // GET: Funcionarios
         public ActionResult Index()
         {
-            return View(db.Funcionario.ToList());
+            FuncIndexViewModel model = new FuncIndexViewModel(db.Funcionario.ToList());
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(FuncIndexViewModel model)
+        {
+
+            if (model.nome != null && model.nome != "")
+            {
+                model.ListaFuncionarios = db.Funcionario.Where(i => i.Nome.ToUpper().Contains(model.nome.ToUpper()) || i.Usuario.ToUpper().Contains(model.nome.ToUpper())).ToList();
+                return View(model);
+            }
+            else
+            {
+                model.ListaFuncionarios = db.Funcionario.ToList();
+                return View(model);
+
+            }
         }
 
         // GET: Funcionarios/Details/5
@@ -81,7 +101,7 @@ namespace GestaoDeSalas.Controllers.Plataforma
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Nome,Usuario,Senha")] Funcionario funcionario)
+        public ActionResult Edit([Bind(Include = "FuncionarioId,Nome,Usuario,Senha")] Funcionario funcionario)
         {
             if (ModelState.IsValid)
             {

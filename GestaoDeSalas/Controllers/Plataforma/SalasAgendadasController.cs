@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using GestaoDeSalas.Models.Autenticacao.AutenticacaoPlataforma;
 using GestaoDeSalas.Models.BancoDeDados;
 using GestaoDeSalas.Models.Sala;
+using GestaoDeSalas.Models.Sala.SalaViewModel;
 
 namespace GestaoDeSalas.Controllers.Plataforma
 {
@@ -20,8 +21,30 @@ namespace GestaoDeSalas.Controllers.Plataforma
         // GET: SalasAgendadas
         public ActionResult Index()
         {
-            var salasAgendadas = db.SalasAgendadas.Include(s => s.Salas);
-            return View(salasAgendadas.ToList());
+
+            var inicio = DateTime.Now;
+            var fim = DateTime.Now.AddDays(7);
+
+            var agendamentos = db.SalasAgendadas.Include(s => s.Salas).Where(i => i.DataInicio >= inicio && i.DataInicio <= fim).ToList();
+
+            AgendamentoIndexViewModel model = new AgendamentoIndexViewModel(agendamentos,inicio,fim);
+            
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(AgendamentoIndexViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                if (model.NomeReunião != null && model.NomeReunião != "")
+                    model.Agendamentos = db.SalasAgendadas.Include(s => s.Salas).Where(i => i.DataInicio >= model.Inicio && i.DataInicio <= model.Fim && i.Titulo.ToUpper().Contains(model.NomeReunião.ToUpper())).ToList();
+                else
+                    model.Agendamentos = db.SalasAgendadas.Include(s => s.Salas).Where(i => i.DataInicio >= model.Inicio && i.DataInicio <= model.Fim).ToList();
+
+                return View(model);
+            }
+            return View();
         }
 
         // GET: SalasAgendadas/Details/5
@@ -53,11 +76,28 @@ namespace GestaoDeSalas.Controllers.Plataforma
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "SalasAgendadasId,SalasId,Titulo,DataInicio,DataFim")] SalasAgendadas salasAgendadas)
         {
+
+
             if (ModelState.IsValid)
             {
-                db.SalasAgendadas.Add(salasAgendadas);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (salasAgendadas.DataInicio > salasAgendadas.DataFim)
+                {
+                    ViewBag.ErroInserir = "Ocorreu um erro ao reservar sua sala. O horário final deve ser maior que o inicial.";
+                    ViewBag.SalasId = new SelectList(db.Salas, "SalasId", "NomeSala", salasAgendadas.SalasId);
+                    return View(salasAgendadas);
+                }
+
+                if (salasAgendadas.VerificaDisponibilidade())
+                {
+
+                    db.SalasAgendadas.Add(salasAgendadas);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.SalasId = new SelectList(db.Salas, "SalasId", "NomeSala", salasAgendadas.SalasId);
+                ViewBag.ErroInserir = "Ocorreu um erro ao reservar sua sala. Já existe um agendamento para essa sala neste horários.";
+                return View(salasAgendadas);
             }
 
             ViewBag.SalasId = new SelectList(db.Salas, "SalasId", "NomeSala", salasAgendadas.SalasId);
@@ -89,9 +129,24 @@ namespace GestaoDeSalas.Controllers.Plataforma
         {
             if (ModelState.IsValid)
             {
-                db.Entry(salasAgendadas).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (salasAgendadas.DataInicio > salasAgendadas.DataFim)
+                {
+                    ViewBag.ErroInserir = "Ocorreu um erro ao reservar sua sala. O horário final deve ser maior que o inicial.";
+                    ViewBag.SalasId = new SelectList(db.Salas, "SalasId", "NomeSala", salasAgendadas.SalasId);
+                    return View(salasAgendadas);
+                }
+
+                if (salasAgendadas.VerificaDisponibilidade())
+                {
+
+                    db.Entry(salasAgendadas).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+
+                ViewBag.SalasId = new SelectList(db.Salas, "SalasId", "NomeSala", salasAgendadas.SalasId);
+                ViewBag.ErroInserir = "Ocorreu um erro ao reservar sua sala. Já existe um agendamento para essa sala neste horários.";
+                return View(salasAgendadas);
             }
             ViewBag.SalasId = new SelectList(db.Salas, "SalasId", "NomeSala", salasAgendadas.SalasId);
             return View(salasAgendadas);

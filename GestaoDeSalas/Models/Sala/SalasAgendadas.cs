@@ -1,6 +1,7 @@
 ﻿using GestaoDeSalas.Models.BancoDeDados;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -12,14 +13,22 @@ namespace GestaoDeSalas.Models.Sala
     {
         public int SalasAgendadasId { get; set; }
 
+        [Display(Name = "Sala do agendamento")]
         [ForeignKey("Salas")]
         public int SalasId { get; set; }
         public virtual Salas Salas { get; set; }
 
+        
+        [Display(Name = "Título")]
         public string Titulo { get; set; }
 
+
+        [Required]
+        [Display(Name = "Data de início")]
         public DateTime DataInicio { get; set; }
 
+        [Required]
+        [Display(Name = "Data de fim")]
         public DateTime DataFim { get; set; }
 
         public SalasAgendadas()

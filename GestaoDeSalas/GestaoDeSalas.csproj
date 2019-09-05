@@ -211,10 +211,13 @@
     <Compile Include="Models\Funcionarios\Funcionario.cs" />
     <Compile Include="Models\Funcionarios\FuncionariosSeguranca.cs" />
     <Compile Include="Models\Funcionarios\FuncionarioViewModel\FuncCadViewModel.cs" />
+    <Compile Include="Models\Funcionarios\FuncionarioViewModel\FuncIndexViewModel.cs" />
     <Compile Include="Models\Funcionarios\FuncionarioViewModel\FuncLoginViewModel.cs" />
     <Compile Include="Models\Funcionarios\LoginFuncionario.cs" />
     <Compile Include="Models\Sala\Salas.cs" />
     <Compile Include="Models\Sala\SalasAgendadas.cs" />
+    <Compile Include="Models\Sala\SalaViewModel\AgendamentoIndexViewModel.cs" />
+    <Compile Include="Models\Sala\SalaViewModel\SalaViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -257,7 +260,9 @@
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

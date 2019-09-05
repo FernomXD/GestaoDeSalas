@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
@@ -11,9 +12,10 @@ namespace GestaoDeSalas.Models.Sala
     {
 
         public int SalasId { get; set; }
-
+        [Required]
+        [Display(Name = "Nome da sala")]
         public string NomeSala { get; set; }
-
+        [Display(Name = "Descrição da sala")]
         public string DescricaoSala { get; set; }
 
         public Salas()

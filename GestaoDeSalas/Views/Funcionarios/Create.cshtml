@@ -1,18 +1,26 @@
 ﻿@model GestaoDeSalas.Models.Funcionarios.Funcionario
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Novo funcionário";
 }
+<link href="~/Content/bootstrap_datepicker/bootstrap-datetimepicker.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<h2>Create</h2>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row" style="padding: 0px 15px 0px 15px;">
+            <center><h3 style="color: #808080"><i class="fa fa-plus"></i>  Novo funcionário</h3></center>
 
 
-@using (Html.BeginForm()) 
+        </div>
+    </div>
+</div>
+
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Funcionario</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -41,15 +49,15 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <a href="@Url.Action("Index", "Funcionarios")" class="btn btn-default"><i class="fa fa-arrow-left"></i> Voltar</a>
+
+                <input type="submit" value="Inserir" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

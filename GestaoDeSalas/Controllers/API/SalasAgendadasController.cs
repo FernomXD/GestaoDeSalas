@@ -51,25 +51,34 @@ namespace GestaoDeSalas.Controllers.API
                 return BadRequest();
             }
 
-            db.Entry(salasAgendadas).State = EntityState.Modified;
+            if (salasAgendadas.DataInicio > salasAgendadas.DataFim)
+                return Content(HttpStatusCode.BadRequest, "Ocorreu um erro ao reservar sua sala. O horário final deve ser maior que o inicial.");
 
-            try
+            if (salasAgendadas.VerificaDisponibilidade())
             {
-                db.SaveChanges();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!SalasAgendadasExists(id))
+
+                db.Entry(salasAgendadas).State = EntityState.Modified;
+
+                try
                 {
-                    return NotFound();
+                    db.SaveChanges();
                 }
-                else
+                catch (DbUpdateConcurrencyException)
                 {
-                    throw;
+                    if (!SalasAgendadasExists(id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
+
+                return StatusCode(HttpStatusCode.NoContent);
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return Content(HttpStatusCode.BadRequest, "Ocorreu um erro ao reservar sua sala. Já existe um agendamento para essa sala neste horários.");
         }
 
         // POST: api/SalasAgendadas

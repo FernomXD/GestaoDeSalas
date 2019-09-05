@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using GestaoDeSalas.Models.Autenticacao.AutenticacaoPlataforma;
 using GestaoDeSalas.Models.BancoDeDados;
 using GestaoDeSalas.Models.Sala;
+using GestaoDeSalas.Models.Sala.SalaViewModel;
 
 namespace GestaoDeSalas.Controllers.Plataforma
 {
@@ -20,7 +21,26 @@ namespace GestaoDeSalas.Controllers.Plataforma
         // GET: Salas
         public ActionResult Index()
         {
-            return View(db.Salas.ToList());
+            SalaViewModel model = new SalaViewModel(db.Salas.ToList());
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Index(SalaViewModel model)
+        {
+            if (model.NomeSala != null && model.NomeSala != "")
+            {
+                model.ListaSalas = db.Salas.Where(i => i.NomeSala.ToUpper().Contains(model.NomeSala.ToUpper())).ToList();
+
+                return View(model);
+            }
+            else
+            {
+                model.ListaSalas = db.Salas.ToList();
+
+                return View(model);
+            }
         }
 
         // GET: Salas/Details/5
@@ -81,7 +101,7 @@ namespace GestaoDeSalas.Controllers.Plataforma
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "NomeSala,DescricaoSala")] Salas salas)
+        public ActionResult Edit([Bind(Include = "SalasId,NomeSala,DescricaoSala")] Salas salas)
         {
             if (ModelState.IsValid)
             {

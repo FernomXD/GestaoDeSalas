@@ -1,18 +1,28 @@
 ﻿@model GestaoDeSalas.Models.Sala.SalasAgendadas
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Deletar agendamento";
 }
 
-<h2>Delete</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
-<h3>Are you sure you want to delete this?</h3>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row" style="padding: 0px 15px 0px 15px;">
+            <center><h3 style="color: #808080"><i class="fa fa-trash-alt"></i>  Deletar agendamento</h3></center>
+
+            
+        </div>
+    </div>
+</div>
+
+<h3>Tem certeza que deseja deletar esse agendamento?</h3>
 <div>
-    <h4>SalasAgendadas</h4>
+
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Salas.NomeSala)
+            @Html.DisplayNameFor(model => model.SalasId)
         </dt>
 
         <dd>
@@ -45,12 +55,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+    <div class="form-actions no-color">
+        <a href="@Url.Action("Index", "SalasAgendadas")" class="btn btn-default"><i class="fa fa-arrow-left"></i> Voltar</a>
+        <input type="submit" value="Deletar" class="btn btn-primary" />
+    </div>
     }
 </div>

@@ -1,17 +1,26 @@
 ﻿@model GestaoDeSalas.Models.Sala.SalasAgendadas
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhes do agendamento";
 }
 
-<h2>Details</h2>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="row" style="padding: 0px 15px 0px 15px;">
+            <center><h3 style="color: #808080"><i class="fa fa-list"></i>  Detalhes do agendamento</h3></center>
+
+
+        </div>
+    </div>
+</div>
 
 <div>
-    <h4>SalasAgendadas</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Salas.NomeSala)
+            @Html.DisplayNameFor(model => model.SalasId)
         </dt>
 
         <dd>
@@ -45,6 +54,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SalasAgendadasId }) |
-    @Html.ActionLink("Back to List", "Index")
+    <a href="@Url.Action("Index", "SalasAgendadas")" class="btn btn-default"><i class="fa fa-arrow-left"></i> Voltar</a>
+    <a href="@Url.Action("Edit/"+Model.SalasAgendadasId, "SalasAgendadas")" class="btn btn-primary"><i class="fa fa-pencil-alt"></i> Editar</a>
 </p>

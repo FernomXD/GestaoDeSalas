@@ -10,6 +10,11 @@ namespace GestaoDeSalas.Models.Autenticacao.AutenticacaoPlataforma
 {
     public class AuthorizeFuncionario : AuthorizeAttribute
     {
+        /// <summary>
+        /// Método responsável por verificar se o cliente está logado utilizando o cookie.
+        /// </summary>
+        /// <param name="httpContext"></param>
+        /// <returns></returns>
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
             BancoDBContext db = new BancoDBContext();
