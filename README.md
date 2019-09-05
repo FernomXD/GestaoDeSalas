@@ -3,19 +3,25 @@
  <h2>Funcionário</h2>
  Funcionários são utilizados para inserir um novo registro de sala ou para agendar o uso de uma sala.
  </br>
+ </br>
  
+ 
+ 
+
 | Nome da variável | Tipo da variável | Descrição                    |
 |------------------|------------------|------------------------------|
 | Nome             | string           | Nome do Funcionário          |
 | Usuario          | string           | Usuário de acesso para a API |
 | Senha            | string           | Senha de acesso para a API   |
+
+
  
  
  <h4>Novo funcionário</h4>
  
+
 | POST | SeuDominio.com.br/api/Funcionarios |
 |------|------------------------------------|
- 
 
 
 | Nome da variável | Tipo da variável | Descrição                    | Obrigatório |
@@ -29,8 +35,11 @@
  <h4>Listar funcionários</h4>
  
  
+
 | GET | SeuDominio.com.br/api/Funcionarios |
-|------|-----------------------------------|
+|-----|------------------------------------|
+
+
  
 
 ![image](https://user-images.githubusercontent.com/37151034/64082056-8b65f900-ccdf-11e9-82bc-4c1530c3dcb6.png)
