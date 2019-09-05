@@ -59,6 +59,9 @@ Uma vez autenticado na plataforma, basta utilizar esse token para acessar a plat
 <h1>Salas</h1>
 É necessário estar logado para ter acesso a qualquer uma das funcionalidade da api relacionadas as salas 
  
+ </br>
+ </br>
+ 
 <h2>Criando uma sala</h2>
 Para inserir uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação e no body inserir o nome da sala e descrição da sala.
 
@@ -82,6 +85,10 @@ Para inserir uma sala basta informar no Headers a key Authorization com os valor
 
 ![image](https://user-images.githubusercontent.com/37151034/64351662-18a39900-cfd1-11e9-9df4-b9b7a3b45b25.png)
 
+</br>
+</br>
+
+
 <h3>Listar salas</h3>
 Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
 
@@ -98,3 +105,41 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 
 ![image](https://user-images.githubusercontent.com/37151034/64353279-e182b700-cfd3-11e9-9805-4c07e902417b.png)
 
+</br>
+</br>
+
+<h3>Buscar uma sala</h3>
+Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+
+| GET | SeuDominio.com.br/api/salas/5 |
+|-----|-------------------------------|
+
+<h3>Autenticação</h3>
+
+| Nome da variável | Tipo da variável | Descrição                                      | Obrigatório |
+|------------------|------------------|------------------------------------------------|-------------|
+| Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
+
+![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+
+![image](https://user-images.githubusercontent.com/37151034/64353542-4fc77980-cfd4-11e9-9580-92f970153553.png)
+
+
+</br>
+</br>
+
+<h3>Deletar uma sala</h3>
+Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+
+| DELETE | SeuDominio.com.br/api/salas/5 |
+|-----|----------------------------------|
+
+<h3>Autenticação</h3>
+
+| Nome da variável | Tipo da variável | Descrição                                      | Obrigatório |
+|------------------|------------------|------------------------------------------------|-------------|
+| Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
+
+![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+
+![image](https://user-images.githubusercontent.com/37151034/64353688-8b624380-cfd4-11e9-94ea-ed120b26be92.png)
