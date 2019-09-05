@@ -143,3 +143,22 @@ Para listar todas as salas basta informar no Headers a key Authorization com os 
 ![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
 
 ![image](https://user-images.githubusercontent.com/37151034/64353688-8b624380-cfd4-11e9-94ea-ed120b26be92.png)
+
+
+</br>
+
+<h3>Alterar uma sala</h3>
+Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+
+| DELETE | SeuDominio.com.br/api/salas |
+|-----|--------------------------------|
+
+<h3>Autenticação</h3>
+
+| Nome da variável | Tipo da variável | Descrição                                      | Obrigatório |
+|------------------|------------------|------------------------------------------------|-------------|
+| Authorization    | string           | token_type e access token fornecido pela api   | Sim         |
+
+![image](https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png)
+
+![image](https://user-images.githubusercontent.com/37151034/64354024-0b88a900-cfd5-11e9-80b2-8d8b34483d35.png)
