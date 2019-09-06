@@ -1,0 +1,552 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0016)http://localhost -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <base href="file:///C:\Users\ferna\OneDrive\Área de Trabalho\Projeto SMARAPD\" />
+  <meta charset="utf-8" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link href="file:///C:\Users\ferna\AppData\Local\Markdown Monster\PreviewThemes\Dharkan\..\scripts\fontawesome\css\font-awesome.min.css" rel="stylesheet" />
+
+  <link href="file:///C:\Users\ferna\AppData\Local\Markdown Monster\PreviewThemes\Dharkan\Theme.css" rel="stylesheet" />
+
+  <script src="file:///C:\Users\ferna\AppData\Local\Markdown Monster\PreviewThemes\Dharkan\..\scripts\jquery.min.js"></script>
+  <link href="file:///C:\Users\ferna\AppData\Local\Markdown Monster\PreviewThemes\Dharkan\..\scripts\highlightjs\styles\twilight.css" rel="stylesheet" />
+  <script src="file:///C:\Users\ferna\AppData\Local\Markdown Monster\PreviewThemes\Dharkan\..\scripts\highlightjs\highlight.pack.js"></script>
+  <script src="file:///C:\Users\ferna\AppData\Local\Markdown Monster\PreviewThemes\Dharkan\..\scripts\preview.js" id="PreviewScript"></script>
+  
+</head>
+<body>
+<div id="MainContent">
+    <!-- Markdown Monster Content -->
+    <h1 id="api---gestao-de-salas"><a id="pragma-line-0"></a>API - Gestao de salas</h1>
+ <h2>Funcionário</h2>
+ Funcionários são utilizados para inserir um novo registro de sala ou para agendar o uso de uma sala.
+ </br>
+ </br>
+ 
+ 
+ 
+<table id="pragma-line-10">
+<thead>
+<tr id="pragma-line-10">
+<th id="pragma-line-10">Nome da variável</th>
+<th id="pragma-line-10">Tipo da variável</th>
+<th id="pragma-line-10">Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-12">
+<td id="pragma-line-12">Nome</td>
+<td id="pragma-line-12">string</td>
+<td id="pragma-line-12">Nome do Funcionário</td>
+</tr>
+<tr id="pragma-line-13">
+<td id="pragma-line-13">Usuario</td>
+<td id="pragma-line-13">string</td>
+<td id="pragma-line-13">Usuário de acesso para a API</td>
+</tr>
+<tr id="pragma-line-14">
+<td id="pragma-line-14">Senha</td>
+<td id="pragma-line-14">string</td>
+<td id="pragma-line-14">Senha de acesso para a API</td>
+</tr>
+</tbody>
+</table>
+ <h4>Novo funcionário</h4>
+ 
+<table id="pragma-line-22">
+<thead>
+<tr id="pragma-line-22">
+<th id="pragma-line-22">POST</th>
+<th id="pragma-line-22">SeuDominio.com.br/api/Funcionarios</th>
+</tr>
+</thead>
+</table>
+<table id="pragma-line-26">
+<thead>
+<tr id="pragma-line-26">
+<th id="pragma-line-26">Nome da variável</th>
+<th id="pragma-line-26">Tipo da variável</th>
+<th id="pragma-line-26">Descrição</th>
+<th id="pragma-line-26">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-28">
+<td id="pragma-line-28">Nome</td>
+<td id="pragma-line-28">string</td>
+<td id="pragma-line-28">Nome do Funcionário</td>
+<td id="pragma-line-28">Sim</td>
+</tr>
+<tr id="pragma-line-29">
+<td id="pragma-line-29">Usuario</td>
+<td id="pragma-line-29">string</td>
+<td id="pragma-line-29">Usuário de acesso para a API</td>
+<td id="pragma-line-29">Sim</td>
+</tr>
+<tr id="pragma-line-30">
+<td id="pragma-line-30">Senha</td>
+<td id="pragma-line-30">string</td>
+<td id="pragma-line-30">Senha de acesso para a API</td>
+<td id="pragma-line-30">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-32"><img src="https://user-images.githubusercontent.com/37151034/64082011-23171780-ccdf-11e9-85c7-4c66f625eb68.png" alt="image" /></p>
+ <h4>Listar funcionários</h4>
+ 
+ 
+<table id="pragma-line-38">
+<thead>
+<tr id="pragma-line-38">
+<th id="pragma-line-38">GET</th>
+<th id="pragma-line-38">SeuDominio.com.br/api/Funcionarios</th>
+</tr>
+</thead>
+</table>
+<p id="pragma-line-44"><img src="https://user-images.githubusercontent.com/37151034/64082056-8b65f900-ccdf-11e9-82bc-4c1530c3dcb6.png" alt="image" /></p>
+<h1>Autenticação</h1>
+<table id="pragma-line-49">
+<thead>
+<tr id="pragma-line-49">
+<th id="pragma-line-49">POST</th>
+<th id="pragma-line-49">SeuDominio.com.br/NewToken</th>
+</tr>
+</thead>
+</table>
+<table id="pragma-line-53">
+<thead>
+<tr id="pragma-line-53">
+<th id="pragma-line-53">Nome da variável</th>
+<th id="pragma-line-53">Tipo da variável</th>
+<th id="pragma-line-53">Descrição</th>
+<th id="pragma-line-53">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-55">
+<td id="pragma-line-55">UserName</td>
+<td id="pragma-line-55">string</td>
+<td id="pragma-line-55">Usuário</td>
+<td id="pragma-line-55">Sim</td>
+</tr>
+<tr id="pragma-line-56">
+<td id="pragma-line-56">Password</td>
+<td id="pragma-line-56">string</td>
+<td id="pragma-line-56">Senha</td>
+<td id="pragma-line-56">Sim</td>
+</tr>
+<tr id="pragma-line-57">
+<td id="pragma-line-57">grant_type</td>
+<td id="pragma-line-57">string</td>
+<td id="pragma-line-57">inserir password nesse campo</td>
+<td id="pragma-line-57">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-60"><img src="https://user-images.githubusercontent.com/37151034/64081766-c23a1000-ccdb-11e9-9c32-c4c23d6ce2f2.png" alt="image" /></p>
+<p id="pragma-line-63">Uma vez autenticado na plataforma, basta utilizar esse token para acessar a plataforma.</p>
+<h1>Salas</h1>
+É necessário estar logado para ter acesso a qualquer uma das funcionalidade da api relacionadas as salas 
+ 
+ </br>
+ </br>
+ 
+<h2>Criando uma sala</h2>
+Para inserir uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação e no body inserir o nome da sala e descrição da sala.
+<table id="pragma-line-76">
+<thead>
+<tr id="pragma-line-76">
+<th id="pragma-line-76">POST</th>
+<th id="pragma-line-76">SeuDominio.com.br/api/salas</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-81">
+<thead>
+<tr id="pragma-line-81">
+<th id="pragma-line-81">Nome da variável</th>
+<th id="pragma-line-81">Tipo da variável</th>
+<th id="pragma-line-81">Descrição</th>
+<th id="pragma-line-81">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-83">
+<td id="pragma-line-83">Authorization</td>
+<td id="pragma-line-83">string</td>
+<td id="pragma-line-83">token_type e access token fornecido pela api</td>
+<td id="pragma-line-83">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-85"><img src="https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png" alt="image" /></p>
+<h3>Informações da sala</h3>
+<table id="pragma-line-89">
+<thead>
+<tr id="pragma-line-89">
+<th id="pragma-line-89">Nome da variável</th>
+<th id="pragma-line-89">Tipo da variável</th>
+<th id="pragma-line-89">Descrição</th>
+<th id="pragma-line-89">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-91">
+<td id="pragma-line-91">NomeSala</td>
+<td id="pragma-line-91">string</td>
+<td id="pragma-line-91">Nome da sala no sistema</td>
+<td id="pragma-line-91">Sim</td>
+</tr>
+<tr id="pragma-line-92">
+<td id="pragma-line-92">DescricaoSala</td>
+<td id="pragma-line-92">string</td>
+<td id="pragma-line-92">Descrição da sala</td>
+<td id="pragma-line-92">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-94"><img src="https://user-images.githubusercontent.com/37151034/64351662-18a39900-cfd1-11e9-9df4-b9b7a3b45b25.png" alt="image" /></p>
+</br>
+</br>
+<h3>Listar salas</h3>
+Para listar todas as salas basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-103">
+<thead>
+<tr id="pragma-line-103">
+<th id="pragma-line-103">GET</th>
+<th id="pragma-line-103">SeuDominio.com.br/api/salas</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-108">
+<thead>
+<tr id="pragma-line-108">
+<th id="pragma-line-108">Nome da variável</th>
+<th id="pragma-line-108">Tipo da variável</th>
+<th id="pragma-line-108">Descrição</th>
+<th id="pragma-line-108">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-110">
+<td id="pragma-line-110">Authorization</td>
+<td id="pragma-line-110">string</td>
+<td id="pragma-line-110">token_type e access token fornecido pela api</td>
+<td id="pragma-line-110">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-112"><img src="https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png" alt="image" /></p>
+<p id="pragma-line-114"><img src="https://user-images.githubusercontent.com/37151034/64353279-e182b700-cfd3-11e9-9805-4c07e902417b.png" alt="image" /></p>
+</br>
+</br>
+<h3>Buscar uma sala</h3>
+Para buscar uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-122">
+<thead>
+<tr id="pragma-line-122">
+<th id="pragma-line-122">GET</th>
+<th id="pragma-line-122">SeuDominio.com.br/api/salas/5</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-127">
+<thead>
+<tr id="pragma-line-127">
+<th id="pragma-line-127">Nome da variável</th>
+<th id="pragma-line-127">Tipo da variável</th>
+<th id="pragma-line-127">Descrição</th>
+<th id="pragma-line-127">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-129">
+<td id="pragma-line-129">Authorization</td>
+<td id="pragma-line-129">string</td>
+<td id="pragma-line-129">token_type e access token fornecido pela api</td>
+<td id="pragma-line-129">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-131"><img src="https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png" alt="image" /></p>
+<p id="pragma-line-133"><img src="https://user-images.githubusercontent.com/37151034/64353542-4fc77980-cfd4-11e9-9580-92f970153553.png" alt="image" /></p>
+</br>
+</br>
+<h3>Deletar uma sala</h3>
+Para deletar uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-142">
+<thead>
+<tr id="pragma-line-142">
+<th id="pragma-line-142">DELETE</th>
+<th id="pragma-line-142">SeuDominio.com.br/api/salas/5</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-147">
+<thead>
+<tr id="pragma-line-147">
+<th id="pragma-line-147">Nome da variável</th>
+<th id="pragma-line-147">Tipo da variável</th>
+<th id="pragma-line-147">Descrição</th>
+<th id="pragma-line-147">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-149">
+<td id="pragma-line-149">Authorization</td>
+<td id="pragma-line-149">string</td>
+<td id="pragma-line-149">token_type e access token fornecido pela api</td>
+<td id="pragma-line-149">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-151"><img src="https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png" alt="image" /></p>
+<p id="pragma-line-153"><img src="https://user-images.githubusercontent.com/37151034/64353688-8b624380-cfd4-11e9-94ea-ed120b26be92.png" alt="image" /></p>
+</br>
+<h3>Alterar uma sala</h3>
+Para alterar uma sala basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-161">
+<thead>
+<tr id="pragma-line-161">
+<th id="pragma-line-161">DELETE</th>
+<th id="pragma-line-161">SeuDominio.com.br/api/salas</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-166">
+<thead>
+<tr id="pragma-line-166">
+<th id="pragma-line-166">Nome da variável</th>
+<th id="pragma-line-166">Tipo da variável</th>
+<th id="pragma-line-166">Descrição</th>
+<th id="pragma-line-166">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-168">
+<td id="pragma-line-168">Authorization</td>
+<td id="pragma-line-168">string</td>
+<td id="pragma-line-168">token_type e access token fornecido pela api</td>
+<td id="pragma-line-168">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-170"><img src="https://user-images.githubusercontent.com/37151034/64351402-9f0bab00-cfd0-11e9-8322-8452cbbbf15c.png" alt="image" /></p>
+<p id="pragma-line-172"><img src="https://user-images.githubusercontent.com/37151034/64354024-0b88a900-cfd5-11e9-80b2-8d8b34483d35.png" alt="image" /></p>
+<h1>Agendamento de salas</h1>
+É necessário estar logado para ter acesso a qualquer uma das funcionalidade da api relacionadas aos agendamentos das salas
+ 
+ </br>
+ </br>
+ 
+<h2>Criando um Agendamento</h2>
+Para inserir um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação e no body inserir as informações necessárias para um agendamento.
+<table id="pragma-line-202">
+<thead>
+<tr id="pragma-line-202">
+<th id="pragma-line-202">POST</th>
+<th id="pragma-line-202">SeuDominio.com.br/api/salasagendadas</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-207">
+<thead>
+<tr id="pragma-line-207">
+<th id="pragma-line-207">Nome da variável</th>
+<th id="pragma-line-207">Tipo da variável</th>
+<th id="pragma-line-207">Descrição</th>
+<th id="pragma-line-207">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-209">
+<td id="pragma-line-209">Authorization</td>
+<td id="pragma-line-209">string</td>
+<td id="pragma-line-209">token_type e access token fornecido pela api</td>
+<td id="pragma-line-209">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-211"><img src="https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png" alt="image" /></p>
+<h3>Informações da sala</h3>
+<table id="pragma-line-215">
+<thead>
+<tr id="pragma-line-215">
+<th id="pragma-line-215">Nome da variável</th>
+<th id="pragma-line-215">Tipo da variável</th>
+<th id="pragma-line-215">Descrição</th>
+<th id="pragma-line-215">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-217">
+<td id="pragma-line-217">SalasId</td>
+<td id="pragma-line-217">int</td>
+<td id="pragma-line-217">Id da sala que será utilizada</td>
+<td id="pragma-line-217">Sim</td>
+</tr>
+<tr id="pragma-line-218">
+<td id="pragma-line-218">Titulo</td>
+<td id="pragma-line-218">string</td>
+<td id="pragma-line-218">Título da reunião</td>
+<td id="pragma-line-218">Sim</td>
+</tr>
+<tr id="pragma-line-219">
+<td id="pragma-line-219">DataInicio</td>
+<td id="pragma-line-219">DateTime</td>
+<td id="pragma-line-219">Data e hora do ínicio</td>
+<td id="pragma-line-219">Sim</td>
+</tr>
+<tr id="pragma-line-220">
+<td id="pragma-line-220">DataFim</td>
+<td id="pragma-line-220">DateTime</td>
+<td id="pragma-line-220">Data e hora do ínicio</td>
+<td id="pragma-line-220">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-222"><img src="https://user-images.githubusercontent.com/37151034/64354860-97e79b80-cfd6-11e9-8892-fb293798f507.png" alt="image" /></p>
+</br>
+</br>
+<h3>Listar agendamentos</h3>
+Para listar todos os agendamentos basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-231">
+<thead>
+<tr id="pragma-line-231">
+<th id="pragma-line-231">GET</th>
+<th id="pragma-line-231">SeuDominio.com.br/api/salasagendadas</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-236">
+<thead>
+<tr id="pragma-line-236">
+<th id="pragma-line-236">Nome da variável</th>
+<th id="pragma-line-236">Tipo da variável</th>
+<th id="pragma-line-236">Descrição</th>
+<th id="pragma-line-236">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-238">
+<td id="pragma-line-238">Authorization</td>
+<td id="pragma-line-238">string</td>
+<td id="pragma-line-238">token_type e access token fornecido pela api</td>
+<td id="pragma-line-238">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-240"><img src="https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png" alt="image" /></p>
+<p id="pragma-line-242"><img src="https://user-images.githubusercontent.com/37151034/64355189-25c38680-cfd7-11e9-94e0-003cd3c32379.png" alt="image" /></p>
+</br>
+</br>
+<h3>Buscar um agendamento</h3>
+Para buscar um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-250">
+<thead>
+<tr id="pragma-line-250">
+<th id="pragma-line-250">GET</th>
+<th id="pragma-line-250">SeuDominio.com.br/api/salasagendadas/5</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-255">
+<thead>
+<tr id="pragma-line-255">
+<th id="pragma-line-255">Nome da variável</th>
+<th id="pragma-line-255">Tipo da variável</th>
+<th id="pragma-line-255">Descrição</th>
+<th id="pragma-line-255">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-257">
+<td id="pragma-line-257">Authorization</td>
+<td id="pragma-line-257">string</td>
+<td id="pragma-line-257">token_type e access token fornecido pela api</td>
+<td id="pragma-line-257">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-259"><img src="https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png" alt="image" /></p>
+<p id="pragma-line-261"><img src="https://user-images.githubusercontent.com/37151034/64355284-4d1a5380-cfd7-11e9-81d5-829e1aab6c35.png" alt="image" /></p>
+</br>
+</br>
+<h3>Deletar um agendamento</h3>
+Para deletar um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-270">
+<thead>
+<tr id="pragma-line-270">
+<th id="pragma-line-270">DELETE</th>
+<th id="pragma-line-270">SeuDominio.com.br/api/salasagendadas/5</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-275">
+<thead>
+<tr id="pragma-line-275">
+<th id="pragma-line-275">Nome da variável</th>
+<th id="pragma-line-275">Tipo da variável</th>
+<th id="pragma-line-275">Descrição</th>
+<th id="pragma-line-275">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-277">
+<td id="pragma-line-277">Authorization</td>
+<td id="pragma-line-277">string</td>
+<td id="pragma-line-277">token_type e access token fornecido pela api</td>
+<td id="pragma-line-277">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-279"><img src="https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png" alt="image" /></p>
+<p id="pragma-line-281"><img src="https://user-images.githubusercontent.com/37151034/64355357-74712080-cfd7-11e9-8671-5a78f8847178.png" alt="image" /></p>
+</br>
+<h3>Alterar um agendamento</h3>
+Para alterar um agendamento basta informar no Headers a key Authorization com os valores recebidos na autenticação.
+<table id="pragma-line-289">
+<thead>
+<tr id="pragma-line-289">
+<th id="pragma-line-289">POST</th>
+<th id="pragma-line-289">SeuDominio.com.br/api/salasagendadas</th>
+</tr>
+</thead>
+</table>
+<h3>Autenticação</h3>
+<table id="pragma-line-294">
+<thead>
+<tr id="pragma-line-294">
+<th id="pragma-line-294">Nome da variável</th>
+<th id="pragma-line-294">Tipo da variável</th>
+<th id="pragma-line-294">Descrição</th>
+<th id="pragma-line-294">Obrigatório</th>
+</tr>
+</thead>
+<tbody>
+<tr id="pragma-line-296">
+<td id="pragma-line-296">Authorization</td>
+<td id="pragma-line-296">string</td>
+<td id="pragma-line-296">token_type e access token fornecido pela api</td>
+<td id="pragma-line-296">Sim</td>
+</tr>
+</tbody>
+</table>
+<p id="pragma-line-298"><img src="https://user-images.githubusercontent.com/37151034/64355606-e21d4c80-cfd7-11e9-8601-f175c57ddfe1.png" alt="image" /></p>
+<p id="pragma-line-300"><img src="https://user-images.githubusercontent.com/37151034/64355474-ae422700-cfd7-11e9-80c5-7c7330dca72d.png" alt="image" /></p>
+
+    <!-- End Markdown Monster Content -->
+</div>
+</body>
+</html>
